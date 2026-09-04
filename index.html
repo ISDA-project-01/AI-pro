@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local AI Assistant Platform</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--card-bg);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        h1 {
+            margin: 0 0 0.5rem 0;
+            color: var(--accent-color);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .badge {
+            background-color: var(--border-color);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+        .architecture-box {
+            background-color: #090d16;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            color: #38bdf8;
+            border: 1px solid var(--border-color);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Local AI Workspace</h1>
+    <p>Independent Local AI Assistant Platform for Windows 10 (CPU & 8 GB RAM Optimized)</p>
+    <div class="badges">
+        <span class="badge">LOCAL AI</span>
+        <span class="badge">PRIVATE</span>
+        <span class="badge">CPU FRIENDLY</span>
+        <span class="badge">8 GB RAM</span>
+        <span class="badge">OPEN SOURCE</span>
+        <span class="badge">MULTI-MODEL</span>
+    </div>
+</header>
+
+<div class="container">
+    <section>
+        <h2>Overview</h2>
+        <p>This system integrates lightweight local LLMs through <strong>Ollama</strong> and provides a feature-rich workspace via <strong>Open WebUI</strong>. Designed specifically for standard CPU-only hardware with strict single-model active memory constraints.</p>
+    </section>
+
+    <section>
+        <h2>Key Features</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>💬 Multi-Model Chat</h3>
+                <p>Switch seamlessly between Llama 3.2 3B, Gemma 2 2B, Phi 3.5, Qwen2.5-Coder, DeepSeek-R1, OpenELM, Ministral, and SmolLM2 with automated memory unloading.</p>
+            </div>
+            <div class="card">
+                <h3>💻 Coding Assistant</h3>
+                <p>Powered by Qwen2.5-Coder 3B for programming, debugging, code generation, and repository analysis.</p>
+            </div>
+            <div class="card">
+                <h3>📄 RAG & Documents</h3>
+                <p>Upload PDF, TXT, DOCX, and source files for private document context retrieval.</p>
+            </div>
+            <div class="card">
+                <h3>🎙️ Voice & Tamil Speech</h3>
+                <p>Whisper-base voice transcription and Tamil Text-to-Speech support using AI4Bharat / Facebook MMS-TTS.</p>
+            </div>
+            <div class="card">
+                <h3>🛠️ Secure Execution</h3>
+                <p>Isolated Python code execution and safe terminal workflows with user confirmation controls.</p>
+            </div>
+            <div class="card">
+                <h3>🚫 No Image / Video Generation</h3>
+                <p>Intentionally text and document focused. Image and video generation models are excluded to keep memory usage strictly under 8 GB.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>System Architecture</h2>
+        <div class="architecture-box">
+                    USER
+                     │
+                     ▼
+              ┌──────────────┐
+              │  Open WebUI  │
+              └──────┬───────┘
+                     │
+                     ▼
+          ┌────────────────────┐
+          │ Local AI Controller│
+          └─────────┬──────────┘
+                    │
+                    ▼
+               ┌─────────┐
+               │ Ollama  │
+               └────┬────┘
+                    │
+             ONE ACTIVE MODEL
+                    │
+        ┌───────────┼───────────┐
+        ▼           ▼           ▼
+      Llama       Qwen        DeepSeek
+        </div>
+    </section>
+
+    <section>
+        <h2>Technology & Attribution</h2>
+        <p>Built with open-source technologies: <strong>Ollama</strong>, <strong>Open WebUI</strong>, <strong>Llama</strong> (Meta), <strong>Gemma</strong> (Google), <strong>Phi</strong> (Microsoft), <strong>Qwen</strong> (Alibaba), <strong>DeepSeek</strong>, <strong>Whisper</strong> (OpenAI), and <strong>AI4Bharat</strong>.</p>
+    </section>
+</div>
+
+<footer>
+    <p>Independent open-source project. Powered by open-source AI technologies.</p>
+</footer>
+
+</body>
+</html>
